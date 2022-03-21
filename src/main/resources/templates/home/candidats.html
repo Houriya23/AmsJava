@@ -21,12 +21,16 @@
 			<th>Nom</th>
 			<th>Email</th>
 			<th>Telephone </th>
+			<th>Details </th>
+			<th>Supprimer </th>
 		</tr>
 		<tr th:each="c : ${tab}">
 		<td th:text="${c.Id}"></td>
 		<td th:text="${c.Nom}"></td>
 		<td th:text="${c.Email}"></td>
 		<td th:text="${c.Telephone}"></td>
+		<td><a th:href="@{/show/{idC}(idC=${c.Id})}" class="btn btn-primary">Show</a></td>
+		<td><a th:href="@{/delete/{idC}(idC=${c.Id})}" class="btn btn-danger">delete</a></td>
 		
 		</tr>
 		
