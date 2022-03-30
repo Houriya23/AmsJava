@@ -29,7 +29,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class ArticleController {
 private final ArticleRepository articleRepository;
 private final ProviderRepository providerRepository;
-public static String uploadDirectory = System.getProperty("user.dir")+"/src/main/resources/static/uploads";
+public static String uploadDirectory = System.getProperty("user.dir")+"/src/main/resources/static/images/articles";
  @Autowired
  public ArticleController(ArticleRepository articleRepository, 
 ProviderRepository providerRepository) {

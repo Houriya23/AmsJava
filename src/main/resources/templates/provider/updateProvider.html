@@ -5,8 +5,7 @@
  <meta http-equiv="x-ua-compatible" content="ie=edge">
  <title>Update Provider</title>
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootst
-rap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"crossorigin="anonymous">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"crossorigin="anonymous">
  <link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"crossorigin="anonymous">
 </head>
 <body>
@@ -15,9 +14,7 @@ rap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPk
  <div class="card">
  <div class="card-body">
  <div class="col-md-8">
- <form action="#"
-th:action="@{/provider/update}" th:object="${provider}"
-method="post">
+ <form action="#" th:action="@{/provider/update}" th:object="${provider}" method="post" enctype="multipart/form-data">
  
 <input type="hidden" th:field="*{id}" />
  <div class="row">
@@ -40,6 +37,14 @@ placeholder="address"> <span
 th:if="${#fields.hasErrors('address')}" th:errors="address"
 class="text-danger"></span>
  </div>
+ <div class="form-group col-md-8">
+ <label for="old logo" class="col-form-label">old logo</label>
+ <img title="provider" alt="ImageProvider" th:src="@{'/images/providers/'+ ${provider.logo}}" width="50" height="50"/>
+  <div class="form-group col-md-8">
+								<label for="new Logo" class="col-form-label"> new Logo</label> <input
+									class="form-control" type="file" id="new Logo" name="files"
+									multiple>
+							</div></div>
  <div class="form-group col-md-8">
  <input type="submit" class="btn btn-primary" value="Update Provider">
  </div>

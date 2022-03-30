@@ -22,11 +22,14 @@ public class Provider {
  @NotBlank(message = "Email is mandatory")
  @Column(name = "email")
  private String email;
+ @Column(name = "logo")
+ private String logo;
  public Provider() {}
- public Provider(String name, String address, String email) {
+ public Provider(String name, String address, String email ,String logo) {
  this.name = name;
  this.address = address;
  this.email = email;
+ this.logo=logo;
  }
  public void setId(long id) {
  this.id = id;
@@ -52,4 +55,13 @@ public class Provider {
  public String getAddress() {
  return address;
  }
+
+
+public void setLogo(String logo) {
+	 this.logo = logo;
+	 }
+	 public String getLogo() {
+		 return logo;
+	 }
+
 }
